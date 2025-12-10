@@ -212,7 +212,7 @@ const SubscribePlan = () => {
               <div className="flex items-center space-x-4">
                 <div className="bg-black/20 rounded-xl p-4 border border-white/5 flex-1 text-center">
                   <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 font-semibold">Duration</p>
-                  <p className="text-white text-xl font-bold">{plan.duration} Days</p>
+                  <p className="text-white text-xl font-bold">{plan.duration} Months</p>
                 </div>
                 <div className="bg-black/20 rounded-xl p-4 border border-white/5 flex-1 text-center">
                    <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 font-semibold">Access</p>
