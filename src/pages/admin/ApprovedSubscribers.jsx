@@ -7,6 +7,15 @@ import AdminLayout from "../../components/AdminLayout";
 import Swal from "sweetalert2";
 
 const ApprovedSubscribers = () => {
+  // Helper function to format dates as DD/MM/YYYY
+  const formatDate = (dateString) => {
+    if (!dateString) return "-";
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
   const navigate = useNavigate();
   const { user } = useAuth();
   const [subscribers, setSubscribers] = useState([]);
@@ -156,10 +165,10 @@ const ApprovedSubscribers = () => {
                           {sub.plan?.name}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                          {sub.startDate ? new Date(sub.startDate).toLocaleDateString() : "-"}
+                          {formatDate(sub.startDate)}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                          {sub.endDate ? new Date(sub.endDate).toLocaleDateString() : "-"}
+                          {formatDate(sub.endDate)}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-900 text-green-200">
@@ -217,13 +226,13 @@ const ApprovedSubscribers = () => {
                     <div className="flex justify-between">
                       <span className="text-gray-400">Start Date:</span>
                       <span className="text-gray-300">
-                        {sub.startDate ? new Date(sub.startDate).toLocaleDateString() : "-"}
+                        {formatDate(sub.startDate)}
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">End Date:</span>
                       <span className="text-gray-300">
-                        {sub.endDate ? new Date(sub.endDate).toLocaleDateString() : "-"}
+                        {formatDate(sub.endDate)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
