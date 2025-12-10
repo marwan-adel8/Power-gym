@@ -95,9 +95,11 @@ const Navbar = () => {
         setIsSidebarOpen(false);
     };
 
-    const handleLogout = () => {
-        logout();
+    const handleLogout = async () => {
+        await logout();
         setIsSidebarOpen(false);
+        // إعادة تحميل الصفحة لمسح Network tab
+        window.location.reload();
     };
 
     const AuthButtons = (

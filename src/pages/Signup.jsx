@@ -47,8 +47,8 @@ const Signup = () => {
                 confirmButtonColor: "#d90a14",
                 confirmButtonText: "Go to Login",
             });
-            // التوجيه إلى صفحة تسجيل الدخول بعد التسجيل الناجح
-            navigate("/login"); 
+            // التوجيه إلى صفحة تسجيل الدخول بعد التسجيل الناجح مع إعادة تحميل الصفحة
+            window.location.href = "/login"; 
         } else {
             // عرض رسالة الخطأ من الـ API
             await Swal.fire({

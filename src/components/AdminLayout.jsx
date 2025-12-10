@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { secureStorage } from '../utils/secureStorage';
 import { FaHome, FaChartBar, FaDumbbell, FaLeaf, FaUser, FaSignOutAlt, FaEdit, FaUsers, FaBars, FaTimes } from 'react-icons/fa';
@@ -33,8 +33,10 @@ const AdminLayout = ({ children }) => {
     }
   }, []);
 
-  const handleLogout = () => {
-    navigate('/');
+  const handleLogout = async () => {
+    await logout();
+    // إعادة تحميل الصفحة لمسح Network tab ثم التوجيه
+    window.location.href = '/';
   };
 
   const toggleSidebar = () => {
@@ -103,14 +105,15 @@ const AdminLayout = ({ children }) => {
           </nav>
         </div>
         
-        {/* زر تسجيل الخروج */}
-        <button 
-          onClick={handleLogout}
+        
+        {/* زر العودة للصفحة الرئيسية */}
+        <Link 
+          to="/"
           className="flex items-center bg-red-600 space-x-3 p-3 hover:bg-zinc-700 rounded-lg transition-colors"
         >
           <FaSignOutAlt />
           <span>Back</span>
-        </button>
+        </Link>
       </aside>
 
       {/* المحتوى الرئيسي */}

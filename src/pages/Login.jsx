@@ -59,10 +59,13 @@ const Login = () => {
             const userRole = result.user?.role; // نستخدم ? لتجنب الأخطاء إذا لم يكن هناك دور
             
             if (userRole === "admin") {
-                navigate("/admin/dashboard"); // مسار لوحة تحكم المدير
+                // إعادة تحميل الصفحة لمسح Network tab ثم التوجيه
+                window.location.href = "/admin/dashboard";
             } else {
-                navigate("/"); // مسار الصفحة الرئيسية للمستخدم العادي
+                // إعادة تحميل الصفحة لمسح Network tab ثم التوجيه
+                window.location.href = "/";
             }
+
 
         } else {
             await Swal.fire({

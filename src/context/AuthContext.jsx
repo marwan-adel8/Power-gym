@@ -26,21 +26,10 @@ export const AuthProvider = ({ children }) => {
         try {
             const data = await registerUser(formData); 
             
-            const userPublicData = {
-                _id: data._id, 
-                name: data.name, 
-                email: data.email, 
-                role: data.role
-            };
-
-            if (data.token) {
-                secureStorage.setItem("userToken", data.token);
-            }
+            // ❌ لا نحفظ الـ token أو الـ user data بعد التسجيل
+            // المستخدم يجب أن يسجل دخوله يدوياً بعد التسجيل
             
-            setUser(userPublicData);
-            secureStorage.setItem("user_data", userPublicData);
-            
-            return { success: true, user: userPublicData }; 
+            return { success: true, message: "Registration successful" }; 
 
         } catch (err) {
             const errorMessage = err.response?.data?.message || err.message || "Registration failed";
