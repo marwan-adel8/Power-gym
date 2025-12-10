@@ -1,0 +1,12 @@
+/* index.css */
+@font-face {
+    font-family: 'Gagalin';
+    src: url('./assets/fonts/Gagalin-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* كلاس جاهز لاستخدام الخط */
+.font-gagalin {
+    font-family: 'Gagalin', sans-serif;
+}
