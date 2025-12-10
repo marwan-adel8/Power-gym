@@ -278,7 +278,7 @@ const ManagePlans = () => {
 
                     <div className="flex justify-between">
                       <span className="text-gray-400 text-sm">Duration:</span>
-                      <span className="text-white font-semibold">{plan.duration} days</span>
+                      <span className="text-white font-semibold">{plan.duration} Days</span>
                     </div>
 
                     {plan.description && (
@@ -357,7 +357,7 @@ const ManagePlans = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-[#ff6b00] uppercase tracking-wider mb-2">
-                      Duration (Months) *
+                      Duration (Days) *
                     </label>
                     <input
                       type="number"

@@ -205,7 +205,7 @@ const AddPlan = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-[#ff6b00] uppercase tracking-wider mb-2">
-                    Duration (Months) *
+                    Duration (Days) *
                   </label>
                   <input
                     type="number"
