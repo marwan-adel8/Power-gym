@@ -212,7 +212,7 @@ const SubscribePlan = () => {
               <div className="flex items-center space-x-4">
                 <div className="bg-black/20 rounded-xl p-4 border border-white/5 flex-1 text-center">
                   <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 font-semibold">Duration</p>
-                  <p className="text-white text-xl font-bold">{plan.duration} Months</p>
+                  <p className="text-white text-xl font-bold">{plan.duration} Days</p>
                 </div>
                 <div className="bg-black/20 rounded-xl p-4 border border-white/5 flex-1 text-center">
                    <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 font-semibold">Access</p>
@@ -264,7 +264,7 @@ const SubscribePlan = () => {
               <div className="space-y-4 relative z-10">
                 <div className="bg-black/40 rounded-lg p-4 border border-white/5 flex justify-between items-center group-hover:border-red-500/20 transition-colors duration-300">
                   <span className="text-sm text-gray-400">Transfer Number</span>
-                  <span className="text-2xl font-bold text-white tracking-wider font-mono">01064935277</span>
+                  <span className="text-lg sm:text-2xl font-bold text-white tracking-wider font-mono">01064935277</span>
                 </div>
                 
                 <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 flex items-start gap-3">
