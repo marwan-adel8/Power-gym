@@ -97,7 +97,7 @@ const AddCoach = () => {
 
       // إرسال socialLinks فقط إذا كان هناك رابط واحد على الأقل
       const hasSocialLinks =
-        socialLinks.facebook || socialLinks.instagram || socialLinks.twitter;
+        socialLinks.facebook || socialLinks.instagram || socialLinks.twitter ;
       if (hasSocialLinks) {
         submitData.append("socialLinks", JSON.stringify(socialLinks));
       }

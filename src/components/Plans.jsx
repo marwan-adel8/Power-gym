@@ -264,7 +264,7 @@ const TrainerCard = ({
   const handleBookSession = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const whatsappNumber = socialLinks.whatsapp || "01279905676"; // رقم افتراضي لو مش موجود
+    const whatsappNumber = socialLinks.whatsapp || "201279905676"; // رقم افتراضي لو مش موجود
     const message = `Hello ${name}, I would like to book a session with you.`;
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");

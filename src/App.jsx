@@ -31,6 +31,41 @@ function App() {
         loadApp();
     }, []);
 
+
+
+      // 🛡️ كود منع الاختصارات والنقر الأيمن (يتم تشغيله مرة واحدة عند تحميل التطبيق)
+  useEffect(() => {
+    
+    // 1. وظيفة منع الاختصارات (F12, Ctrl+Shift+I/J)
+    const disableDevToolsKeys = (event) => {
+      // F12 key (Key code 123)
+      if (event.keyCode === 123) {
+        event.preventDefault();
+      }
+      // Ctrl+Shift+I / Ctrl+Shift+J 
+      if (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74)) {
+        event.preventDefault();
+      }
+    };
+
+    // 2. وظيفة منع النقر بزر الماوس الأيمن (القائمة السياقية)
+    const disableContextMenu = (event) => {
+      event.preventDefault();
+    };
+    
+    // إضافة Event Listeners
+    document.addEventListener('keydown', disableDevToolsKeys);
+    document.addEventListener('contextmenu', disableContextMenu);
+
+    // 🧹 دالة التنظيف: إزالة الـ Listeners عند إزالة المكون
+    return () => {
+      document.removeEventListener('keydown', disableDevToolsKeys);
+      document.removeEventListener('contextmenu', disableContextMenu);
+    };
+
+  }, []); // [] لضمان تشغيله مرة واحدة فقط
+
+
     const loaderColor = "#d90a14";
 
     if (appIsLoading) {
